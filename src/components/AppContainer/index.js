@@ -1,39 +1,27 @@
 import React from 'react';
-import {string} from 'prop-types';
 import Logo from '../Logo';
 import LiveClock from '../LiveClock';
-import {createAvatar} from '@dicebear/avatars';
-import * as style from '@dicebear/avatars-bottts-sprites';
 import {Outlet} from 'react-router-dom';
+import Dropdown from '../Dropdown';
 
-function AppContainer({name}) {
-  const avatar = createAvatar(style, {
-    seed: 'seed',
-    dataUri: true,
-    size: 30,
-    backgroundColor: 'gold',
-    radius: 50,
-    mouth: 'teethSmile',
-    scale: 90,
-  });
+function AppContainer() {
+  const name = 'Sandun Rathsara';
 
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap bg-blue-800 px-6 py-4 text-white">
+      <nav className="flex items-center justify-between flex-wrap bg-blue-800 px-6 py-2 text-white">
         <Logo />
         <div className="flex items-center">
           <LiveClock />
-          <img src={avatar} alt={'avatar'} className="mx-2" />
-          <p>{name}</p>
+          <img className="mx-2" src={`https://avatars.dicebear.com/api/micah/${name}.svg?radius=50&size=30&backgroundColor=white&scale=80`} alt={'avatar'} />
+          <Dropdown title={name}>
+            <Dropdown.Item name={'Logout'} onClick={() => {}} />
+          </Dropdown>
         </div>
       </nav>
       <Outlet />
     </div>
   );
 }
-
-AppContainer.propTypes = {
-  name: string,
-};
 
 export default AppContainer;
