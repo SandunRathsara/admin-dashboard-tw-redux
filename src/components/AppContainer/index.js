@@ -13,7 +13,7 @@ function AppContainer() {
         <Logo />
         <div className="flex items-center">
           <LiveClock />
-          <img className="mx-2" src={`https://avatars.dicebear.com/api/micah/${name}.svg?radius=50&size=30&backgroundColor=white&scale=80`} alt={'avatar'} />
+          <img className="mx-2" src={`https://avatars.dicebear.com/api/micah/${name}.svg?radius=10&size=30&backgroundColor=white&scale=80`} alt={'avatar'} />
           <Dropdown title={name}>
             <Dropdown.Item name={'Logout'} onClick={() => {}} />
           </Dropdown>

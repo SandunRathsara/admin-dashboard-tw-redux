@@ -20,14 +20,14 @@ function Dropdown(props) {
     return (
         <div ref={wrapperRef} className="relative cursor-pointer bg-transparent">
             <button className="py-2">{props.title} <FontAwesomeIcon icon={faCaretDown}/></button>
-            {showDropdown && <div className="absolute bg-white w-full flex flex-col items-start shadow-lg ">
+            {showDropdown && <div className="absolute bg-white w-full flex flex-col items-start shadow-lg rounded bg-opacity-80">
                 {props.children}
                 </div>}
         </div>
     )
 }
 
-const Item = (props) => <button className="text-gray-700 font-semibold z-50 text-left px-2 my-1 w-full hover:bg-blue-400" onClick={props.onClick}>{props.name}</button>
+const Item = (props) => <button className="text-gray-700 font-semibold z-50 text-left px-2 my-1 w-full hover:bg-gray-800 hover:bg-opacity-10" onClick={props.onClick}>{props.name}</button>
 Item.propTypes = {
     onClick: func,
     name: string
